@@ -2,14 +2,14 @@ import java.lang.Math.*;
 
 public class Main {
 	public static void main(String []args) {
-		static double a = 2;
-		static double b = 200;
-		static double c = 4;
-		static double delta;
-		static double x_one;
-		static double x_two;
-		static double sum;
-		static double product;
+		double a = 2;
+		double b = 200;
+		double c = 4;
+		double delta;
+		double x_one;
+		double x_two;
+		double sum;
+		double product;
 
 		delta = b*b - (4 * a * c);
 		
