@@ -15,7 +15,7 @@ public class Main {
 		
 		if (delta > 0) {
 			x_one = (-b + Math.sqrt(delta))/(2*a);
-			x_two = (-b + Math.sqrt(delta))/(2*a);
+			x_two = (-b - Math.sqrt(delta))/(2*a);
 
 			sum = x_one + x_two;
 			product = x_one * x_two;
