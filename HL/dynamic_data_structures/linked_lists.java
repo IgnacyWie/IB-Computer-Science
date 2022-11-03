@@ -1,3 +1,17 @@
+public class Main {
+	public static void main(String[] args) {
+		linkedList myList = new linkedList();
+
+		for (int i = 0; i < 20; i++) {
+			myList.add(i);
+		}
+
+//		myList.listAll();
+		myList.find(5);
+	}
+}
+
+// This should be separate file
 public class linkedList {
 	class Node {
 		int data;
@@ -25,6 +39,33 @@ public class linkedList {
 		}
 	}
 
+	public void addMiddle(int data) {
+		Node newNode = new Node(data);
+		Node current = head;
+		int count = 0;
+		int tempCount = 0;
+
+		if (head == null) {
+			head = newNode;
+			tail = newNode;
+			return;
+		}
+		while(current != null) {
+			current = current.next;
+			// increase the count variable
+			count++;
+		}
+		current = head;
+		tempCount = count;
+		while(current != null) {
+			if(count/2 == tempCount) {
+				
+				return;
+			}
+			tempCount -= 1;
+		}
+	}
+
 	public void listAll() {
 		Node current = head;
 
@@ -40,13 +81,21 @@ public class linkedList {
 		System.out.println();
 	}
 
-	public static void main(String[] args) {
-		linkedList myList = new linkedList();
+	public void find(int find) {
+		Node current = head;
+		boolean found = false;
 
-		for (int i = 0; i < 20; i++) {
-			myList.add(i);
+		if (head == null) {
+			System.out.println("List is empty");
 		}
-
-		myList.listAll();
+		System.out.println("Searching for the element with " + find);
+		while(current != null) {
+			if (current.data == find) {
+				System.out.println("Parameter found !!!");
+				return;
+			}
+			current = current.next;
+		}
+		System.out.println("Parameter not found...");
 	}
 }
